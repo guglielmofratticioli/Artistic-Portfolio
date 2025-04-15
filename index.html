@@ -228,18 +228,65 @@
             text-align: center;
         }
 
-        /* Skills Section */
-        #skills h3,
+        /* ====================
+              SKILL BARS (New/Modified)
+           ==================== */
+        .skills-list {
+            margin-top: 15px;
+            /* Add some space below the section title */
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+            /* Space between each skill */
+        }
+
+        .skill-name {
+            display: block;
+            /* Make name take full width */
+            color: var(--text-light);
+            font-size: 0.9em;
+            font-weight: 500;
+            /* Slightly bolder than default */
+            margin-bottom: 5px;
+            /* Space between name and bar */
+            font-family: 'Poppins', sans-serif;
+            /* Ensure consistent font */
+        }
+
+        .skill-bar-container {
+            width: 100%;
+            height: 8px;
+            /* Height of the bar */
+            background-color: rgba(255, 255, 255, 0.15);
+            /* Faint background for the track */
+            border-radius: 4px;
+            /* Rounded corners for the container */
+            overflow: hidden;
+            /* Ensure inner bar respects the radius */
+        }
+
+        .skill-bar {
+            height: 100%;
+            width: var(--skill-level, 0%);
+            /* Use the custom property from inline style, default to 0% */
+            background: var(--primary-gradient);
+            /* Use the purple-orange gradient */
+            /* Or use a solid color: background-color: var(--primary-color); */
+            /* Or use secondary: background-color: var(--secondary-color); */
+            border-radius: 4px;
+            /* Match container rounding */
+            transition: width 0.5s ease-out;
+            /* Animate the bar width */
+        }
+
+        /* Artistic Skills (still using tags) */
         #artistic-skills h3 {
             /* For consistency if h3 is used */
             font-size: 1.1em;
             color: var(--text-light);
             margin-bottom: 12px;
             font-weight: 600;
-        }
-
-        .skill-category {
-            margin-bottom: 20px;
         }
 
         .skill-tags {
@@ -271,7 +318,6 @@
             /* Dark text on orange hover */
         }
 
-        /* Artistic Skills (reuse skill-tags) */
         #artistic-skills .skill-tags span {
             background-color: rgba(255, 255, 255, 0.1);
             /* Slightly different if needed */
@@ -423,7 +469,7 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             /* Responsive grid */
             gap: 25px;
         }
@@ -668,9 +714,21 @@
             }
 
             .skill-tags span {
+                /* Applies to artistic skills tags too */
                 font-size: 0.8em;
                 padding: 3px 8px;
             }
+
+            .skill-name {
+                font-size: 0.85em;
+                /* Adjust skill name size */
+            }
+
+            .skill-bar-container {
+                height: 6px;
+                /* Slightly smaller bar height */
+            }
+
 
             .item-header h3 {
                 font-size: 1.1em;
@@ -730,7 +788,8 @@
                                 rel="noopener noreferrer"><i class="fab fa-linkedin fa-fw"></i> LinkedIn Profile</a>
                         </li>
                         <li><a href="https://guglielmofratticioli.github.io/Guglielmo-Fratticioli-Composer/"
-                                target="_blank" rel="noopener noreferrer"><i class="fas fa-globe fa-fw"></i> Music
+                                target="_blank" rel="noopener noreferrer"><i class="fas fa-music fa-fw"></i> Sound
+                                Designer
                                 Portfolio</a></li>
                         <li><a href="https://www.instagram.com/gu.re.mi/" target="_blank" rel="noopener noreferrer"><i
                                     class="fab fa-instagram fa-fw"></i> Instagram (@gu.re.mi)</a></li>
@@ -738,67 +797,116 @@
                     </ul>
                 </section>
 
+                <!-- UPDATED Skills Section with Bars at 50% -->
                 <section id="skills">
                     <h2>Technical Skills</h2>
-                    <div class="skill-category">
-                        <h3>Front-End & Web</h3>
-                        <div class="skill-tags">
-                            <span>JavaScript (ES6+)</span>
-                            <span>Vue.js</span>
-                            <span>Node.js</span>
-                            <span>HTML5</span>
-                            <span>CSS3 / SASS</span>
-                            <span>Responsive Design</span>
-                            <span>Web Audio API</span>
-                            <span>Tone.js</span>
-                            <span>Three.js</span>
-                            <span>Framer</span>
-                            <span>Figma</span>
-                            <span>UI/UX Principles</span>
-                            <span>PHP</span>
+                    <div class="skills-list">
+
+                        <!-- Front-End & Web -->
+                        <div class="skill-item"> <span class="skill-name">Js/HTML/CSS</span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 90%;"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Programming & General</h3>
-                        <div class="skill-tags">
-                            <span>Python</span>
-                            <span>C++</span>
-                            <span>Git / Github</span>
-                            <span>MATLAB</span>
-                            <span>Java</span>
+                        <div class="skill-item"> <span class="skill-name">Vue/Node</span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 80%;"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Audio / ML / Creative</h3>
-                        <div class="skill-tags">
-                            <span>JUCE Framework</span>
-                            <span>VST Development</span>
-                            <span>DSP / Audio Effects</span>
-                            <span>PyTorch / LibTorch</span>
-                            <span>ML Models (Mamba/SSM, RVC)</span>
-                            <span>TouchDesigner</span>
-                            <span>GLSL</span>
-                            <span>Generative AI (ComfyUI)</span>
-                            <span>Web Audio</span>
-                            <span>MIR / Librosa</span>
+                        <div class="skill-item"> <span class="skill-name">Angular/React</span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 40%;"></div>
+                            </div>
                         </div>
-                    </div>
+                        <div class="skill-item"> <span class="skill-name">Framer/Figma</span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 60%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Programming & General -->
+                        <div class="skill-item"> <span class="skill-name">Python</span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 100%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"> <span class="skill-name">C++/Java</span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 90%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Audio / ML / Creative Tech -->
+                        <div class="skill-item"> <span class="skill-name">JUCE / Max / PureData / ToneJs </span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"> <span class="skill-name">ML Models (Pytorch)</span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"> <span class="skill-name">TouchDesigner</span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"> <span class="skill-name">GLSL / Processing / ThreeJS</span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 50%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"> <span class="skill-name">AI Tools (ComfyUI/WeKinator)</span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"> <span class="skill-name">Protocols (OSC/DMX/MIDI/STMPE) </span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 70%;"></div>
+                            </div>
+                        </div>
+                    </div> <!-- /skills-list -->
+
                 </section>
 
+                <!-- Original Artistic Skills section (unchanged) -->
                 <section id="artistic-skills">
                     <h2>Creative & Artistic</h2>
                     <div class="skill-tags">
-                        <span>Music Production (Ableton, Logic)</span>
-                        <span>Sound Design</span>
-                        <span>Composition</span>
-                        <span>Piano & Guitar</span>
-                        <span>Creative Coding</span>
-                        <span>Visual Development</span>
-                        <span>Photo Editing (Photoshop)</span>
-                        <span>Vector Graphics</span>
-                        <span>3D (Blender Basics)</span>
-                        <span>Game Audio (Unity/Wwise/FMOD)</span>
-                        <span>Video Editing (FinalCut, DaVinci)</span>
+                        <div class="skill-item"> <span class="skill-name">Music Production / Sound Design </span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"> <span class="skill-name">Piano, Guitar and Orchestration</span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 100%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"> <span class="skill-name">Photo Editing / Vector Graphics </span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 50%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"> <span class="skill-name">3D Blender (Shading/Layout/Mesh Cleanup)
+                            </span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"> <span class="skill-name">Game Audio (Unity/Wwise/FMOD) </span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"> <span class="skill-name">Video Editing (FinalCut, DaVinci) </span>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="--skill-level: 60%;"></div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
@@ -813,14 +921,13 @@
             <section id="profile">
                 <h2>Profile</h2>
                 <p>
-                    Creative <strong>Full-Stack</strong> developer with a Technical background in Computer Engineering
-                    with a <strong>Master's at Polimi</strong> in Music/Acoustic Engineering. Passionate about designing
-                    user experiences in intersection of audio, visuals, and technology. Proven ability to code
-                    <strong>Vue.js, Node.js, JS/HTML/CSS, C#</strong>. Experienced in <strong>Creative Coding
-                        (TouchDesigner, OSC protocols, GLSL)</strong>, <strong>Audio Programming (C++, JUCE, Max,
-                        ToneJs)</strong>,<strong>Music Production</strong>,<strong>Sound Design</strong> and machine
-                    learning R&D(Python). Seeking roles where I can combine technical skills with an artistic and design
-                    sensibility. </p>
+                    A <strong>26-year-old</strong> creative <strong>Full-Stack</strong> developer with a technical
+                    background in Computer Engineering and a <strong>Master's at Polimi</strong> in Music/Acoustic
+                    Engineering. I enjoy working with audio and visual technologies in a
+                    stimulating, creative environment. I have experience in coding for Web <strong>Vue.js, Node.js, JS/HTML/CSS,
+                        </strong>, for  <strong>Creative Projects (TouchDesigner, OSC protocols,
+                        GLSL)</strong>, <strong>Audio Programming (C++, JUCE, Max, ToneJs)</strong>, and <strong>machine learning R&D (Python)</strong>. I'm
+                    looking for roles where I can apply my technical expertise in the field of digital communication and design to build <strong>innovative user experiences.</strong>
             </section>
 
             <section id="education">
@@ -966,46 +1073,6 @@
 
                     <div class="project-card">
                         <!-- !! Replace with actual path !! -->
-                        <img src="images/ComposerWebsite.jpg" alt="Composer Portfolio Website Screenshot"
-                            class="project-image">
-                        <div class="project-content">
-                            <h3>Composer Portfolio</h3>
-                            <div class="project-links">
-                                <a href="https://guglielmofratticioli.github.io/Guglielmo-Fratticioli-Composer/"
-                                    target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i> Live Site</a>
-                            </div>
-                            <p>Designed and deployed a responsive personal music portfolio website using vanilla
-                                <strong>HTML, CSS, and JavaScript</strong>.</p>
-                            <div class="project-tags">
-                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive
-                                    Design</span><span>Portfolio</span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="project-card">
-                        <!-- !! Replace with actual path !! -->
-                        <img src="images/Votech.jpg" alt="Votech VST UI Mockup" class="project-image">
-                        <div class="project-content">
-                            <h3>Votech: VST Web UI</h3>
-                            <div class="project-links">
-                                <a href="https://github.com/mattiamassimi/Votech.git" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Github></a>
-                                <a href="https://www.notion.so/guglielmo-fratticioli/Votech-Project-17788a034d9080a89c77cc6b9ef69356"
-                                    target="_blank" rel="noopener noreferrer"><i class="fas fa-book-open"></i>
-                                    Details</a>
-                            </div>
-                            <p>Designed & developed a custom VST UI using <strong>HTML/CSS/JS</strong> within the
-                                <strong>JUCE</strong> framework (WebView).</p>
-                            <div class="project-tags">
-                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>C++</span><span>JUCE</span><span>VST</span><span>UI
-                                    Design</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <!-- !! Replace with actual path !! -->
                         <img src="images/NeuVC.jpg" alt="NeuVC VST Plugin Interface" class="project-image">
                         <div class="project-content">
                             <h3>NeuVC: AI Voice Conversion VST</h3>
@@ -1036,8 +1103,13 @@
                                     rel="noopener noreferrer"><i class="fab fa-itch-io"></i> Itch.io</a>
                                 <a href="https://www.notion.so/guglielmo-fratticioli/DJ-Vs-Zombies-Unity-17788a034d9080e6b3a7cae34f1df527"
                                     rel="noopener noreferrer"><i class="fas fa-book-open"></i> Details</a>
+                                    <a href="https://youtube.com/shorts/GuMwLA1i2r0?feature=share" target="_blank"
+                                    rel="noopener noreferrer"><i class="fab fa-youtube"></i> Gameplay</a>
                             </div>
-                            <p>Contributed to a mobile tower defense game developed in <strong>Unity</strong> as Developer and Composer.</p>
+
+                            
+                            <p>Contributed to a mobile tower defense game developed in <strong>Unity</strong> as
+                                Developer and Composer.</p>
                             <div class="project-tags">
                                 <span>Unity</span><span>C#</span><span>Game Development</span><span>Mobile Game</span>
                             </div>
