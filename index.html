@@ -22,24 +22,23 @@
               VARIABLES & RESET (Museum Palette)
            ==================== */
            :root {
-            --primary-color: #FFD644;         /* Brighter, softer yellow accent */
-            --secondary-color: #007D9C;       /* Balanced azure blue for contrast with yellow */
-            --dark-base: #1E1E1E;             /* Deep charcoal for better readability */
-            --dark-bg: #007D9C;               /* Slightly lighter dark grey for background elements */
-            --light-bg: #FAFAFA;              /* Soft white, easier on the eyes than pure white */
-            --medium-grey: #A0A0A0;           /* Cooler mid-grey for contrast and neutrality */
-            --pure-white: #FFFFFF;            /* Retain for cards and highlights */
-            --page-bg: #F4F6F8;               /* Softer off-white with a bluish tint for elegance */
+            --primary-color: #FDCB0A; /* Strong Yellow Accent */
+            --secondary-color: #000000; /* Black for hover/contrast */
+            --dark-base: #222222; /* Very Dark Grey/Off-Black for text */
+            --dark-bg: #404040; /* Dark Grey for sidebar */
+            --light-bg: #FFFFFF; /* Pure White for text on dark */
+            --medium-grey: #888888; /* Medium Grey for secondary text/elements */
+            --pure-white: #FFFFFF; /* Pure White for card backgrounds */
+            --page-bg: #F8F9FA; /* Very Light Grey/Off-White for page background */
 
             /* --- Derived Variables --- */
-            --text-light: var(--light-bg);
-            --text-dark: var(--dark-base);
-            --text-medium: var(--medium-grey);
-            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            --card-hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            --text-light: var(--light-bg); /* White */
+            --text-dark: var(--dark-base); /* Off-Black */
+            --text-medium: var(--medium-grey); /* Medium Grey */
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Slightly softer shadow */
+            --card-hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Slightly softer hover shadow */
             --border-radius: 8px;
             --transition-speed: 0.3s;
-            
             /* Gradient - Changed to Solid Yellow */
             --primary-gradient: var(--primary-color); /* Solid Yellow */
             /* Optional Gradient: linear-gradient(135deg, #FDCB0A, #EAA600); */
