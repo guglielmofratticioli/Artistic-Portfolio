@@ -24,6 +24,7 @@
            :root {
             --primary-color: #1D4187; /* Strong Yellow Accent */
             --secondary-color: #000000; /* Black for hover/contrast */
+            --light-primary: #00A7FF; 
             --dark-base: #222222; /* Very Dark Grey/Off-Black for text */
             --dark-bg: #404040; /* Dark Grey for sidebar */
             --light-bg: #FFFFFF; /* Pure White for text on dark */
@@ -161,7 +162,7 @@
             font-size: 1.3em;
             margin-bottom: 15px;
             padding-bottom: 8px;
-            border-bottom: 2px solid var(--primary-color); /* Yellow border */
+            border-bottom: 2px solid var(--light-primary); /* Yellow border */
             display: inline-block;
         }
 
@@ -188,7 +189,7 @@
         }
 
         .contact-info i {
-            color: var(--primary-color); /* Yellow icons */
+            color: var(--light-primary); /* Yellow icons */
             font-size: 1.1em;
             width: 20px;
             text-align: center;
@@ -226,7 +227,7 @@
             height: 100%;
             width: var(--skill-level, 0%);
             /* Use solid yellow */
-            background: var(--primary-color);
+            background: var(--light-primary);
             /* Or use a yellow gradient if preferred */
             /* background: linear-gradient(135deg, #FDCB0A, #EAA600); */
             border-radius: 4px;
@@ -262,7 +263,7 @@
 
          /* MODIFIED: Skill tag hover state */
         .sidebar .skill-tags span:hover {
-            background-color: var(--primary-color); /* Yellow background on hover */
+            background-color: var(--light-primary); /* Yellow background on hover */
             color: var(--dark-base); /* Dark text on yellow hover */
         }
 
